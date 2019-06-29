@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detection Error Tradeoff</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/control-bar.css">
+    <link rel="stylesheet" href="./css/det-chart.css">
+</head>
+
+<body>
+    <div id="det-chart"></div>
+    <div id="invisible-det-chart" style="display: none;"></div>
+    <button id="export-btn">Save as png</button>
+
+    <script src="../vendor/d3.min.js"></script>
+    <script>
+
+        require = require('esm')(module)
+        require('./renderer.js')
+
+    </script>
+
+</body>
+
+</html>

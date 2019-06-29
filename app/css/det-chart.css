@@ -1,0 +1,27 @@
+#det-chart {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 1;
+  shape-rendering: crispEdges;
+  z-index: 0;
+  stroke-width: 2px;
+}
+
+.axis {
+  font-size: 15px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: rgb(46, 46, 46);
+  shape-rendering: crispEdges;
+  stroke-width: 2px;
+}
