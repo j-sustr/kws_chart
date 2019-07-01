@@ -214,7 +214,7 @@ export default function drawDetChart(settings, data, print=false) {
 
     function brushended() {
         console.log('brushended')
-        console.log(this)
+        //console.log(this)
         var s = d3.event.selection;
         if (!s) {
             if (!idleTimeout) return idleTimeout = setTimeout(() => idled(), idleDelay);

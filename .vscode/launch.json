@@ -29,7 +29,9 @@
                 "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
             },
             "args": [
-                "--debug"
+                "--debug",
+                "-d   ", "C:/Users/jansu/OneDrive/Plocha/kws_main/output",
+                "-s   ", "D:/_projects/kws_chart/settings.json"
             ],
         },
         {

@@ -2,7 +2,10 @@ const url = require('url');
 const path = require('path');
 const electron = require('electron');
 const { app, BrowserWindow, ipcMain, Menu, MenuItem } = electron;
+const remote = electron.remote;
 //const controller = require('./tableController');
+
+const DEBUG = global.DEBUG;
 
 let mainWindow;
 
@@ -20,7 +23,9 @@ app.on('ready', function () {
             nodeIntegration: true
         }
     });
-    mainWindow.setMenu(null); // ODSTRANENI MENU
+    if (!DEBUG) {
+        mainWindow.setMenu(null); // ODSTRANENI MENU
+    }
     // Show window when page is ready
     mainWindow.once('ready-to-show', () => {
         mainWindow.show()

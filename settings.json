@@ -1,7 +1,4 @@
 {
-    "data-dir": {
-        "path": "C:\\Users\\jansu\\OneDrive\\Plocha\\kws_main\\output"
-    },
     "chart": {
         "x-axis-range": [0, 100],
         "y-axis-range": [0, 100],

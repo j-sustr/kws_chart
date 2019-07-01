@@ -1,6 +1,10 @@
-import { readFile, showErrorBox } from '../requests.js';
 
-const SETTINGS_PATH = `./settings.json`
+import { readFile, showErrorBox } from '../requests.js';
+import { remote } from 'electron';
+import path from 'path';
+
+//const CWD = remote.getGlobal('CWD');
+const SETTINGS_PATH = remote.getGlobal('SETTINGS_PATH') //path.join(CWD, `settings.json`);
 
 export default async function loadSettings() {
     let settings;

@@ -8,6 +8,15 @@ import { remote} from 'electron';
 //import { controlBar } from './components/controlBar.js';
 
 const DEBUG = remote.getGlobal('DEBUG');
+const DATA_DIR = remote.getGlobal('DATA_DIR');
+const CWD = remote.getGlobal('CWD');
+const SETTINGS_PATH = remote.getGlobal('SETTINGS_PATH');
+
+console.log(`DEBUG: ${DEBUG}`);
+console.log(`DATA_DIR: ${DATA_DIR}`);
+console.log(`SETTINGS_PATH: ${SETTINGS_PATH}`);
+console.log(`CWD: ${CWD}`);
+
 
 async function render() {
     //controlBar.build();
@@ -16,7 +25,7 @@ async function render() {
     let settings = await loadSettings();
     if (!settings) return;
     let chartSettings = settings['chart'];
-    const dataGroups = await loadData(settings['data-dir'].path);
+    const dataGroups = await loadData(DATA_DIR);
     window.dataGroups = dataGroups
     
     const dataReady = dataGroups.map(grp => {
@@ -63,6 +72,7 @@ if (DEBUG) {
     require('../lib.js/electron/development');
     let btn = document.createElement('button');
     btn.innerHTML = 'render';
+    //btn.style.zIndex = '30';
     btn.onclick = () => {
         document.body.lastElementChild.remove()
         render();
