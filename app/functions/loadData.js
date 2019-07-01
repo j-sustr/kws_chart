@@ -17,7 +17,7 @@ export default async function loadData(dirPath) {
                 data = await readFile(filePath, 'utf8');
                 data = JSON.parse(data);
                 let numW = data['n-spot-words'];
-                let eer = Math.round(100 * data['eer'] / numW);
+                let eer = Math.round(data['eer']);
                 let th = Math.round(data['eer-spot-threshold']);
                 data.name = `${fileName.split('.')[0]} (#w=${numW}), EER=${eer}% at th=${th}`;
                 dataGroups.push(data);

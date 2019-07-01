@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "electron .",
-    "package-win": "electron-packager . kws_chart --overwrite --platform=win32 --arch=ia32 --prune=true --out=C:/Users/jansu/OneDrive/Plocha/workspace_js/release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"KWS Chart\""
+    "package-win": "electron-packager . kws_chart --overwrite --platform=win32 --arch=ia32 --prune=true --out=D:/release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"KWS Chart\""
   },
   "keywords": [
     "KWS", "Chart"

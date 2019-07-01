@@ -3,9 +3,11 @@ import loadData from './functions/loadData.js';
 import drawDetChart from './functions/drawDetChart.js'
 import { exportChartBtn } from './components/exportBtn.js';
 import { getRandomColor } from '../lib.js/ui/color.js';
+import { remote} from 'electron';
 
 //import { controlBar } from './components/controlBar.js';
 
+const DEBUG = remote.getGlobal('DEBUG');
 
 async function render() {
     //controlBar.build();
@@ -56,6 +58,18 @@ async function render() {
     //detChart.schemeGroups(allGrps);
 }
 
-render();
+if (DEBUG) {
+    remote.getCurrentWindow().openDevTools(); // DEBUG
+    require('../lib.js/electron/development');
+    let btn = document.createElement('button');
+    btn.innerHTML = 'render';
+    btn.onclick = () => {
+        document.body.lastElementChild.remove()
+        render();
+    }
+    document.body.appendChild(btn);
+} else {
+    render()
+}
 
 
